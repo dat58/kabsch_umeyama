@@ -1,0 +1,13 @@
+[package]
+name = "kabsch_umeyama"
+version = "0.1.0"
+edition = "2021"
+authors = ["Vo Tien Dat <vtdat58@gmail.com>"]
+license = "Apache-2.0"
+description = "The Kabsch-Umeyama algorithm is a method for aligning and comparing the similarity between two sets of points. It finds the optimal translation, rotation and scaling by minimizing the root-mean-square deviation (RMSD) of the point pairs."
+rust-version = "1.80.0"
+readme = "README.md"
+
+[dependencies]
+nalgebra = { version = "0.33.2", default-features = false }
+nalgebra-lapack = "0.25.0"
