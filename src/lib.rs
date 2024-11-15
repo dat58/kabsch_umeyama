@@ -7,7 +7,7 @@ use nalgebra::{
     SMatrix, U1,
 };
 use nalgebra_lapack::SVD;
-use std::ops::MulAssign;
+use std::ops::{Deref, MulAssign};
 
 pub type NestedArray<const R: usize, const C: usize> = [[f64; C]; R];
 pub struct Array2<const R: usize, const C: usize>(NestedArray<R, C>);
@@ -45,6 +45,31 @@ impl<const R: usize, const C: usize, const RC: usize> From<&[f64; RC]> for Array
 impl<const R: usize, const C: usize> Into<SMatrix<f64, R, C>> for Array2<R, C> {
     fn into(self) -> SMatrix<f64, R, C> {
         SMatrix::<f64, R, C>::from_row_slice(self.0.as_flattened())
+    }
+}
+
+impl<const R: usize, const C: usize> Deref for Array2<R, C> {
+    type Target = NestedArray<R, C>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl<const R: usize, const C: usize> Array2<R, C> {
+    /// New Array2 from a nested array
+    pub fn new(nested_array: NestedArray<R, C>) -> Self {
+        Self(nested_array)
+    }
+
+    /// Number of rows
+    pub const fn nrows(&self) -> usize {
+        R
+    }
+
+    /// Number of columns
+    pub const fn ncols(&self) -> usize {
+        C
     }
 }
 
