@@ -33,7 +33,7 @@ fn main() {
     // create an array src with 2 rows and 3 columns from a nested array
     let src = Array2::from([[1., 2., 3.], [4., 5., 6.]]);
 
-    // create a dst array with 2 rows and 3 columns from a slice
+    // create a dst array with 2 rows and 3 columns from a reference array
     let dst = Array2::<2, 3>::from(&[2., 3., 4., 5., 6., 7.]);
     
     // estimate the translation matrix
