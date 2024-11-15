@@ -19,7 +19,7 @@
 ## Dependency
 If you have Ubuntu, follow the command below:
 ```shell
-sudo apt install gfortran
+sudo apt install gfortran cmake
 ```
 If you encounter an error, please check the requirements at [nalgebra-lapack](https://docs.rs/nalgebra-lapack/latest/nalgebra_lapack/)
 
