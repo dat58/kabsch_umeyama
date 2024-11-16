@@ -10,6 +10,8 @@ use nalgebra_lapack::SVD;
 use std::ops::{Deref, MulAssign};
 
 pub type NestedArray<const R: usize, const C: usize> = [[f64; C]; R];
+
+#[derive(Clone, Copy, Debug)]
 pub struct Array2<const R: usize, const C: usize>(NestedArray<R, C>);
 
 impl<const R: usize, const C: usize> From<NestedArray<R, C>> for Array2<R, C> {
