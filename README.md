@@ -1,9 +1,10 @@
-# Kabsch-Umeyama &emsp; [![Build Status]][actions] [![Latest Version]][crates.io]
+# Kabsch-Umeyama &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![Download]][crates.io]
 
 [Build Status]: https://img.shields.io/github/actions/workflow/status/dat58/kabsch_umeyama/rust.yml?branch=main
 [actions]: https://github.com/dat58/kabsch_umeyama/actions?query=branch%3Amain
 [Latest Version]: https://img.shields.io/crates/v/kabsch_umeyama.svg
 [crates.io]: https://crates.io/crates/kabsch_umeyama
+[Download]: https://img.shields.io/crates/d/kabsch_umeyama.svg
 
 **The Kabsch-Umeyama algorithm is a method for aligning and comparing the similarity between two sets of points. It finds the optimal translation, rotation and scaling by minimizing the root-mean-square deviation (RMSD) of the point pairs.**
 
